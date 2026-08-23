@@ -1,0 +1,116 @@
+LICENÇA DE PROTEÇÃO A CÓDIGO ABERTO NÃO COMERCIALIZÁVEL
+
+Módulo Iugu para WHMCS - Pix, Boleto e Cartão
+
+Copyright (c) 2026 Edilson Souza - Hostcel - https://www.hostcel.com.br
+
+Esta licença foi redigida por Edilson Souza (Hostcel) para os módulos que ele
+publica. O código-fonte é ABERTO para leitura, auditoria, uso e modificação.
+A VENDA É PROIBIDA.
+
+Aviso de honestidade: esta NÃO é uma licença "open source" no sentido da Open
+Source Initiative, porque restringe uso comercial. O termo correto é
+"código-fonte aberto, venda proibida".
+
+Ao instalar, usar ou copiar este módulo, você concorda com os termos abaixo.
+
+
+1. O QUE VOCÊ PODE FAZER
+
+   a) Instalar e usar o módulo, sem custo, em quantas instalações do WHMCS a
+      sua empresa ou o seu grupo econômico operar.
+   b) Ler, estudar e auditar todo o código - ele é distribuído aberto
+      justamente para isso, porque um módulo de pagamento merece ser lido
+      antes de entrar na sua operação.
+   c) Modificar o código para o seu próprio uso.
+   d) Redistribuir o módulo, original ou modificado, desde que:
+      - seja SEMPRE gratuito, sem cobrança de qualquer natureza;
+      - esta licença acompanhe a cópia, sem alteração;
+      - a autoria original de Edilson Souza (Hostcel) seja mantida e visível,
+        inclusive nos cabeçalhos dos arquivos;
+      - as suas modificações fiquem identificadas como suas.
+   e) Enviar correções e melhorias pelo repositório oficial.
+
+
+2. O QUE VOCÊ NÃO PODE FAZER
+
+   a) VENDER o módulo, no todo ou em parte, original ou modificado. Isso
+      inclui cobrar por download, por licença, por ativação, por "versão
+      premium", por instalação obrigatória, por suporte obrigatório para
+      usá-lo, ou embuti-lo como item cobrado em um pacote.
+   b) Sublicenciar, alugar ou transferir direitos sobre o módulo a terceiros
+      mediante pagamento.
+   c) Condicionar o acesso ao módulo a qualquer contrapartida financeira.
+   d) Remover, alterar ou ocultar avisos de autoria, marca ou origem.
+   e) Apresentar o módulo, modificado ou não, como sendo de sua autoria.
+   f) Publicá-lo em loja ou marketplace de módulos pagos.
+
+   Cobrar pelo SEU trabalho de consultoria, instalação ou customização para um
+   cliente específico é permitido. O que não pode é cobrar pelo módulo em si,
+   nem torná-lo condição de uma venda.
+
+
+3. O QUE O MÓDULO FAZ NO SEU WHMCS
+
+   Cria e usa uma única tabela própria, mod_iugu_charges, que guarda o vínculo
+   entre a fatura do WHMCS e a cobrança na Iugu, mais o código Pix e a linha
+   digitável já emitidos.
+
+   Além disso, usa as funções oficiais do WHMCS para dar baixa em fatura
+   (addInvoicePayment) e registrar transação (logTransaction). Não altera
+   preço, produto, cliente nem template.
+
+   Fala com dois endereços externos:
+   - https://api.iugu.com - a API da Iugu, com a credencial que VOCÊ
+     configurar, para emitir e consultar cobranças;
+   - https://js.iugu.com - apenas quando o cartão está habilitado; é a
+     biblioteca da Iugu que captura o cartão no navegador do cliente, para que
+     o número não passe pelo seu servidor.
+
+   O painel de versão consulta um endereço da Hostcel só para informar se
+   existe versão nova. Essa consulta não envia dado nenhum do seu WHMCS: é uma
+   requisição de leitura de um arquivo público. Se o endereço estiver fora do
+   ar, o módulo funciona igual.
+
+   Nenhum dado dos seus clientes é enviado à Hostcel, em nenhuma hipótese.
+
+   Não há verificação de licença, chamada de "ativação", telemetria nem código
+   ofuscado. Tudo que o módulo faz está neste repositório, legível.
+
+
+4. SEM GARANTIA
+
+   O software é fornecido "COMO ESTÁ", sem garantia de qualquer tipo, expressa
+   ou implícita, incluindo - sem se limitar a - garantias de adequação a uma
+   finalidade específica ou de funcionamento ininterrupto.
+
+   Este módulo movimenta dinheiro. Teste em ambiente de teste antes de usar em
+   produção, mantenha backup do seu WHMCS e confira os primeiros pagamentos.
+   Os autores não respondem por indisponibilidade, cobrança indevida, perda de
+   dados ou lucros cessantes.
+
+   A Iugu é uma empresa independente. Este módulo não é oficial, não é
+   patrocinado nem endossado pela Iugu, e a marca Iugu pertence aos seus
+   titulares - é citada aqui apenas para identificar com qual serviço o módulo
+   se integra.
+
+
+5. VIGÊNCIA
+
+   Esta licença vale enquanto você cumprir os termos acima. Descumprido
+   qualquer item da seção 2, o direito de uso cessa imediatamente, sem
+   prejuízo das medidas cabíveis.
+
+
+6. LEI APLICÁVEL
+
+   Esta licença é regida pelas leis da República Federativa do Brasil, em
+   especial a Lei 9.610/1998 (direitos autorais) e a Lei 9.609/1998 (proteção
+   da propriedade intelectual de programa de computador), que protegem esta
+   obra independentemente de registro.
+
+   Fica eleito o foro da comarca do domicílio do autor para dirimir questões
+   decorrentes desta licença.
+
+
+Dúvidas sobre a licença: https://www.hostcel.com.br

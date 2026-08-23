@@ -1,0 +1,41 @@
+{
+    "schema": "1.0",
+    "type": "whmcs-gateways",
+    "name": "iugu",
+    "version": "2.0.0",
+    "license": "free",
+    "category": "payments",
+    "premium": "false",
+    "description": {
+        "name": "Iugu - Pix, Boleto e Cartão",
+        "tagline": "Receba por Pix, boleto e cartão pela Iugu, com baixa automática da fatura.",
+        "short": "Recebe por Pix, boleto e cartão pela conta Iugu e baixa a fatura sozinho.",
+        "long": "Liga o seu WHMCS a uma conta Iugu.\n\nA cobrança nasce junto com a fatura: o Pix copia-e-cola e a linha digitável já ficam prontos para enviar, e continuam os mesmos enquanto valerem.\n\nA baixa é conferida na API antes de quitar - o webhook nunca é aceito pelo que ele diz. Uma conferência diária pega o que o webhook não entregou.\n\nCódigo aberto, uso gratuito, venda proibida.",
+        "features": [
+            "Pix com QR code e copia-e-cola na página da fatura",
+            "Boleto com linha digitável e PDF",
+            "Cartão de crédito com parcelamento, sem o número passar pelo seu servidor",
+            "Cobrança emitida automaticamente quando a fatura é criada",
+            "Baixa automática conferida na API antes de quitar a fatura",
+            "Conferência diária das cobranças que o webhook não confirmou",
+            "Cancelamento do Pix quando o boleto é pago, e vice-versa",
+            "Estorno pelo botão do próprio WHMCS",
+            "Multa e juros de atraso configuráveis"
+        ]
+    },
+    "logo": {
+        "filename": "logo.png"
+    },
+    "support": {
+        "homepage": "https://github.com/Hostcel/iugu-whmcs",
+        "learn_more": "https://www.hostcel.com.br",
+        "support_url": "https://github.com/Hostcel/iugu-whmcs/issues",
+        "docs_url": "https://github.com/Hostcel/iugu-whmcs#readme"
+    },
+    "authors": [
+        {
+            "name": "Edilson Souza - Hostcel",
+            "homepage": "https://www.hostcel.com.br"
+        }
+    ]
+}

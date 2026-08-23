@@ -1,0 +1,45 @@
+# Cinto de segurança do diretório do módulo Iugu.
+#
+# Os arquivos daqui são bibliotecas: quem precisa deles é o PHP do WHMCS, não
+# o navegador. As duas exceções são create_charge.php e check_status.php, que
+# a página da fatura chama por AJAX.
+#
+# Sem esta regra, abrir /modules/gateways/iugu/config.php pela web devolveria
+# um erro do PHP com o caminho completo do arquivo no servidor.
+#
+# Só vale em Apache (e em Litespeed). Em Nginx a regra equivalente é:
+#
+#   location ~ ^/modules/gateways/iugu/(?!create_charge\.php|check_status\.php).*$ {
+#       deny all;
+#   }
+#
+# Ainda assim, o módulo não depende disso para ser seguro: todo arquivo
+# começa com uma verificação que encerra a execução em acesso direto, e o log
+# é gravado fora do diretório publicado.
+#
+# ---------------------------------------------------------------------------
+# Módulo Iugu para WHMCS - Autor: Edilson Souza - Hostcel (hostcel.com.br)
+# Licença de Proteção a Código Aberto Não Comercializável - ver LICENSE.
+# ---------------------------------------------------------------------------
+
+# Apache 2.4 (mod_authz_core). O IfModule evita erro 500 em servidor 2.2.
+<IfModule mod_authz_core.c>
+    <FilesMatch ".*">
+        Require all denied
+    </FilesMatch>
+    <FilesMatch "^(create_charge|check_status)\.php$">
+        Require all granted
+    </FilesMatch>
+</IfModule>
+
+# Apache 2.2 (mod_authz_host), para instalações antigas.
+<IfModule !mod_authz_core.c>
+    <FilesMatch ".*">
+        Order allow,deny
+        Deny from all
+    </FilesMatch>
+    <FilesMatch "^(create_charge|check_status)\.php$">
+        Order deny,allow
+        Allow from all
+    </FilesMatch>
+</IfModule>
